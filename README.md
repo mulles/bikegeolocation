@@ -35,3 +35,7 @@ Roadmap:
 
 Sources & Thx: 
 
+
+Contributing:
+
+Feel free to contribute to the project in any way you like!
