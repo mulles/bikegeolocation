@@ -1,13 +1,15 @@
 # bikegeolocation
 
-Goal: building a -small device: 3x3cm
+Goal: building a
+								 -small device: 3x3cm
                  -low energy: last 1 year on 18650 (1xlithium laptop cell)
                  -cheap under 15€ 
                
 Software: see this repositories (libraries need to be added in Arduino IDE)
 
 
-Hardware: -ESP8266 Breakoutboard: Wemos D1 
+Hardware: 
+					-ESP8266 Breakoutboard: Wemos D1 
           -RFM95 (lorawan modul)
           -Lithium Batt Shield for WemosD1
           -Antenna
