@@ -16,8 +16,7 @@
 
 
 // Globale Variable: 
-char str[50], strges[10000] = "http://find-wifi.mylnikov.org/#";
-
+ char str[10000]="http://find-wifi.mylnikov.org/#";
 
 
 void setup() {
@@ -32,19 +31,6 @@ void setup() {
 }
 
 void loop() {
-
-   // Email schon vorbereiten um Zeit zu sparen.
-   ESPMailer* mail = new ESPMailer(); // Create a new mail
-          mail->Host = "fill_smtpserveradress";
-          mail->SMTPAuth = true; 
-          mail->Username = "fill_username";
-          mail->Password = "fill_password"; 
-          mail->setFrom("fill_mailadress"); // Set sender, optional with name.
-          mail->addAddress("fill_mailadress"); // Add a new recipient, could be addCC or addBCC too.
-          mail->isHTML(false); //  Returns, if message is set to html, may set the type, if you call with boolean.
-          mail->Subject = "ESP8266 The position of your bike";
-          mail->setTimezone(2); // Difference from UTC in hours, xx.5 accepted for XX:30 time difference (e.g. Venezuela: -4.5 will be -0430). If not called, UTC is used in Timestamp.
-          mail->setDebugLevel(3); // -1 will be quiet, 0 just print errors (default), 1 messages from Client to Server, 2 Server answers and 3 will output everything
 
   Serial.println("scan start");
   digitalWrite(LED_BUILTIN, HIGH);
@@ -64,13 +50,9 @@ void loop() {
     {
       //Data to store
       uint8_t *mac = WiFi.BSSID(i); 
-      sprintf(str,"%02X:%02X:%02X:%02X:%02X:%02X,%d;",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], WiFi.RSSI(i));
-      strcat(strges, str);
+      sprintf(str+strlen(str),"%02X:%02X:%02X:%02X:%02X:%02X,%d;",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], WiFi.RSSI(i));
 
-      // Print SSID, BSSID, RSSI for each network found 
-      //Serial.printf("%02X:%02X:%02X:%02X:%02X:%02X,%d;",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], WiFi.RSSI(i) ); // print the MAC address
-      //Serial.print(WiFi.SSID(i));
-      
+
       
       if (WiFi.SSID(i) == "Freifunk")
       {
@@ -83,29 +65,36 @@ void loop() {
           
           while (WiFi.status() != WL_CONNECTED) // achtung kann dies in einer endlosschleife enden? 
           {
-            delay(1);
+        
             Serial.print(".");
+            delay(1);
           }
           
           Serial.println();
+
           Serial.print("Connected, IP address: ");
           Serial.println(WiFi.localIP());
 
           // Send Mail with the found wifis passt and future ->  https://github.com/ArduinoHannover/ESPMailer    
-          mail->Body = strges;
+          ESPMailer* mail = new ESPMailer(); // Create a new mail
+          mail->Host = "tofillsmtpserveradd";
+          mail->SMTPAuth = true; 
+          mail->Username = "tofillout";
+          mail->Password = "tofillout"; 
+          mail->setFrom("tofill@out","Fillyourname"); // Set sender, optional with name.
+          mail->addAddress("tofill@out","Fill the name"); // Add a new recipient, could be addCC or addBCC too.
+          mail->isHTML(false); //  Returns, if message is set to html, may set the type, if you call with boolean.
+          mail->Subject = "ESP8266 The position of your bike";
+          mail->setTimezone(2); // Difference from UTC in hours, xx.5 accepted for XX:30 time difference (e.g. Venezuela: -4.5 will be -0430). If not called, UTC is used in Timestamp.
+          mail->setDebugLevel(3); // -1 will be quiet, 0 just print errors (default), 1 messages from Client to Server, 2 Server answers and 3 will output everything
+          mail->Body = str;
           mail->send(); //  Returns true if sent successfully.
+          Serial.println(str);
           
           
       }    
 
     } 
-//     // Maschine readable SSID,RSSI 
-//     for (int i = 0; i < n; ++i)
-//    {
-//      uint8_t *mac = WiFi.BSSID(i); 
-//      Serial.printf("%02X:%02X:%02X:%02X:%02X:%02X,%d;",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], WiFi.RSSI(i) ); // print the MAC address
-//      delay(10);
-//    }
 
     
   }
@@ -118,8 +107,8 @@ void loop() {
 //  Serial.println("Sleep.... 1");
 //  delay(100);
   digitalWrite(LED_BUILTIN, LOW);
-//  ESP.deepSleep(10000000); // 20000000 = 20 sec //Hardware: Connect RST -> D0
-// delay(500);
+//ESP.deepSleep(20000000); // 20000000 = 20 sec //Hardware: Connect RST -> D0
+delay(50000); //execute every 30 sec consumes a lot of energy as no deep sleep.
 //  Serial.println("Woked up....");
 
   
