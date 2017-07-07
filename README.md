@@ -24,7 +24,7 @@ Techniques used:
                 -Email 
                 future: mqqt
 
-Setup/Configure: Import libraries
+Setup/Configure: Import library https://github.com/ArduinoHannover/ESPMailer 
        Search for "fillout" in WifiScanMail.ino and complete the fields
 		
     
