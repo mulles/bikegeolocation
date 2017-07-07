@@ -22,7 +22,11 @@ Techniques used:
                 -Wlan
                 -C 
                 -Email 
-                future: mqqt,
+                future: mqqt
+
+Setup/Configure: Import libraries
+       Search for "fillout" in WifiScanMail.ino and complete the fields
+		
     
             
 Roadmap: 
