@@ -8,7 +8,10 @@
 		-tracks the position of your bike anytime it's moving.  
 							
 							
-![Hardware_Setup](https://github.com/mulles/bikegeolocation/blob/master/Hardware_Setup.jpg)								 
+![Hardware_Setup](https://github.com/mulles/bikegeolocation/blob/master/Hardware_Setup.jpg)								
+
+
+
 **Software:** see this repositories (libraries need to be added in Arduino IDE)
 
 
@@ -40,7 +43,8 @@
 	2.base this readme on a standart 
 	3.but links for hardware stuff
 	4.add sources 
-	5.creat wiki with all the knownledge I aquired and the why I decided to got that or an other road. Try to do this always 	       straight away so it is in chronological order. 
+	5.creat wiki with all the knownledge I aquired and the why I decided to got that or an other road. 
+	Try to do this always straight away so it is in chronological order. 
 
 **Sources & Thx**: 
 
