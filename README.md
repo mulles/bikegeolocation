@@ -5,7 +5,7 @@
 		-small device: 3x3cm
 		-low energy: last 1 year on 18650  (1xlithium laptop cell) 
 		-cheap under 15€ 
-		-tracks the position of your bike anytime it1s moving.  
+		-tracks the position of your bike anytime it's moving.  
 							
 							
 ![Hardware_Setup](https://github.com/mulles/bikegeolocation/blob/master/Hardware_Setup.jpg)								 
