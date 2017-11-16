@@ -43,7 +43,7 @@
 	2.base this readme on a standart 
 	3.but links for hardware stuff
 	4.add sources 
-	5.creat wiki with all the knownledge I aquired and the why I decided to got that or an other road. 
+	5.creat wiki with all the knownledge I aquired and the why I decided to go that or an other road. 
 	Try to do this always straight away so it is in chronological order. 
 
 **Sources & Thx**: 
