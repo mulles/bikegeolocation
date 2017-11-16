@@ -2,17 +2,17 @@
 
 **Goal: building a** 
 
-		-small device: 3x3cm
-		-low energy: last 1 year on 18650  (1xlithium laptop cell) 
-		-cheap under 15€ 
-		-tracks the position of your bike anytime it's moving.  
+	-small device: 3x3cm
+	-low energy: last 1 year on 18650  (1xlithium laptop cell) 
+	-cheap under 15€ 
+	-tracks the position of your bike anytime it's moving.  
 							
 							
 ![Hardware_Setup](https://github.com/mulles/bikegeolocation/blob/master/Hardware_Setup.jpg)								
 
 
 
-**Software:** see this repositories (libraries need to be added in Arduino IDE)
+**Software:** see this repositorie (libraries need to be added in Arduino IDE)
 
 
 **Hardware:** 
@@ -26,11 +26,11 @@
 
 **Techniques used:** 
 
-		-Lorawan
-		-Wlan
-		-C 
-		-Email 
-		future: mqqt
+	-Lorawan
+	-Wlan
+	-C 
+	-Email 
+	future: mqqt
 
 **Setup/Configure:** Import library https://github.com/ArduinoHannover/ESPMailer 
        Search for "fillout" in WifiScanMail.ino and complete the fields
