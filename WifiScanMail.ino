@@ -101,7 +101,7 @@ void loop() {
   Serial.println("");
 
 
-  // Go to sleep 2 minutes max would be 4294967295us = 71min 
+  // Go to sleep 2 minutes max would be 4294967295us = 71min acording to the ESP8266 SDK
 //  Serial.println("Sleep.... 2");
 //  delay(100);
 //  Serial.println("Sleep.... 1");
