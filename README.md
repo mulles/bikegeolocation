@@ -1,3 +1,5 @@
+This project is activatly developed on GITLAB: https://gitlab.com/mulles/bikegeolocation.git
+
 # bikegeolocation
 
 **Goal: building a** 
@@ -52,3 +54,5 @@
 **Contributing**:
 
 Feel free to contribute to the project in any way you like!
+
+ATTENTION: This project is activatly developed on GITLAB: https://gitlab.com/mulles/bikegeolocation.git
